@@ -3,6 +3,7 @@ import React from 'react'
 import Link from "next/link";
 import { button, button as buttonStyles } from "@nextui-org/theme";
 import { Button } from '@nextui-org/button'
+import { ThemeSwitch } from '@/components/theme-switch';
 
 function Navbar() {
 	return (
@@ -12,7 +13,11 @@ function Navbar() {
 			</div>
 
 			<div>
-				<Button color='primary' variant='light' radius='full'><Link href="/login" className='font-bold'>Get Started</Link></Button>
+				<div className='flex gap-3 items-center'>
+					<Button color='primary' variant='light' radius='full'><Link href="/login" className='font-bold'>Get Started</Link></Button>
+					<ThemeSwitch />
+
+				</div>
 			</div>
 		</div>
 	)

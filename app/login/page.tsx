@@ -3,6 +3,7 @@ import React from 'react'
 import { useState } from 'react'
 import Navbar from '@/components/Navbar'
 import { Card, CardHeader, CardBody } from '@nextui-org/card'
+import { ThemeSwitch } from '@/components/theme-switch'
 import { Divider } from '@nextui-org/divider'
 import { Tabs, Tab } from "@nextui-org/tabs";
 import { useTransition } from 'react'
@@ -44,11 +45,12 @@ function page() {
 					},
 					className: 'class',
 				}} />
-				<div className='topbar w-full'>
+				<div className='topbar w-full flex justify-between'>
 					<Link href="/" className=' flex items-center gap-2 font-bold text-default-800 text-sm'>
-						<ArrowLeft2 size={18} color="#fff" />
+						<ArrowLeft2 size={18} className='dark:#fff' />
 						Back
 					</Link>
+					<ThemeSwitch />
 				</div>
 
 				<div className="flex gap-48">

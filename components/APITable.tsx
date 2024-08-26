@@ -9,7 +9,7 @@ function APITable() {
 	return (
 		<>
 
-			<Table className='bg-zinc-950' aria-label="Example static collection table">
+			<Table shadow='none' className='border border-1 border-default-300 rounded-md dark:border-0 shadow-none dark:bg-zinc-950' aria-label="Example static collection table">
 				<TableHeader>
 					<TableColumn>NAME</TableColumn>
 					<TableColumn>IMAGES</TableColumn>
@@ -19,9 +19,9 @@ function APITable() {
 				</TableHeader>
 				<TableBody>
 					<TableRow key="1">
-						<TableCell className='font-bold'>Thapar Institute of Engineering and Technology</TableCell>
+						<TableCell className='font-medium'>Thapar Institute of Engineering and Technology</TableCell>
 						<TableCell>3</TableCell>
-						<TableCell>10:32</TableCell>
+						<TableCell>3 hours ago</TableCell>
 						<TableCell>
 							<div className='flex gap-3 items-center'>
 								<Tooltip content="View">

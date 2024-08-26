@@ -3,7 +3,7 @@ import Link from 'next/link'
 import UserButton from '@/components/UserButton'
 import { createClient } from '@/utils/supabase/server'
 import { redirect } from "next/navigation";
-import { LayoutDashboard, Computer} from 'lucide-react';
+import { LayoutDashboard, Computer } from 'lucide-react';
 
 async function Sidebar() {
 	const supabase = createClient()
@@ -14,7 +14,7 @@ async function Sidebar() {
 	}
 
 	return (
-		<div className="sidebar h-screen w-[20%] bg-zinc-950 flex flex-col justify-between">
+		<div className="sidebar h-screen w-[20%] bg-zinc-100 dark:bg-zinc-950 flex flex-col justify-between">
 			<div>
 				<div className="brand p-10">
 					<h3 className='font-extrabold text-3xl'>Flow<span className='text-blue-500'>Lens</span></h3>

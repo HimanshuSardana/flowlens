@@ -1,11 +1,15 @@
 # Flowlens
 
-### TODOs
-- Make ThemeSwitcher work
-- Settings Modal
+### TODOs (before internal hackathon)
 - Implement OAuth2
-- Create users table for Username
+- Improve Hero Page
+- ~~Settings Modal~~
+- ~~Make ThemeSwitcher work~~
 - Create APIs table 
 - Add API Page
+
+
+### TODOs
+- Create users table for Username
 
 

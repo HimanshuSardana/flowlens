@@ -19,6 +19,11 @@ import Link from 'next/link'
 import { LayoutDashboard, Computer, Plus } from 'lucide-react'
 import UserButton from '../../components/UserButton'
 import ThemeSwitcher from '../../components/ThemeSwitcher'
+import dynamic from 'next/dynamic';
+
+const Map = dynamic(() => import('@/components/Map'), {
+	ssr: false, // This disables server-side rendering for this component
+});
 
 export default async function DashboardPage() {
 	const supabase = createClient()
@@ -36,11 +41,11 @@ export default async function DashboardPage() {
 				<div className='p-10'>
 					<div className='flex justify-between'>
 						<h3 className='text-lg font-bold'>Dashboard</h3>
-						<AddAPIButton />
 					</div>
 				</div>
-				<div className='px-10'>
-					<APITable />
+				<div className='dark:invert px-10 h-[50vh]'>
+					<h3></h3>
+					<Map latitude={28.560741} longitude={77.214371} />
 				</div>
 
 			</div>
