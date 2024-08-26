@@ -2,6 +2,7 @@ import React from 'react'
 import Topbar from '@/components/Topbar'
 import AddAPIButton from '@/components/AddAPIButton'
 import APITable from '../../../components/APITable'
+import Sidebar from '@/components/Sidebar'
 import MapTest from '../../../components/MapTest'
 import { redirect } from 'next/navigation'
 import {
@@ -29,18 +30,7 @@ export default async function DashboardPage() {
 
 	return (
 		<div className='p-0 m-0 flex'>
-			<div className="sidebar h-screen w-[20%] bg-zinc-950 flex flex-col justify-between">
-				<div>
-					<div className="brand p-10">
-						<h3 className='font-extrabold text-3xl'>Flow<span className='text-blue-500'>Lens</span></h3>
-					</div>
-					<div className="links flex flex-col">
-						<Link className="px-10 py-3 font-bold text-default-500 flex gap-3 items-center" href="#"><LayoutDashboard /> Dashboard</Link>
-						<Link className="px-10 py-3 font-bold text-blue-500 flex gap-3 items-center" href="#"><Computer /> APIs</Link>
-					</div>
-				</div>
-				<UserButton name={"Himanshu Sardana"} email={data.user.email} />
-			</div>
+			<Sidebar />
 			<div className='flex flex-col'>
 				<Topbar breadcrumbs="Dashboard > APIs" />
 				<div className='p-10'>

@@ -9,6 +9,7 @@ async function Sidebar() {
 	const supabase = createClient()
 
 	const { data, error } = await supabase.auth.getUser()
+
 	if (error || !data?.user) {
 		redirect('/login')
 	}
@@ -24,7 +25,7 @@ async function Sidebar() {
 					<Link className="px-10 py-3 font-bold flex gap-3 items-center" href="localhost:3000/dashboard/api"><Computer /> APIs</Link>
 				</div>
 			</div>
-			<UserButton name={"Himanshu Sardana"} email={data.user.email} />
+			<UserButton name={data.user.user_metadata.username} email={data.user.email} />
 		</div>
 
 	)

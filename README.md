@@ -7,9 +7,8 @@
 - ~~Make ThemeSwitcher work~~
 - Create APIs table 
 - Add API Page
+- ~~Create users table for Username~~
 
 
 ### TODOs
-- Create users table for Username
-
-
+- Allow uploading images via API
