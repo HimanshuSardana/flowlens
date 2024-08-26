@@ -1,4 +1,5 @@
 import React from 'react'
+import Topbar from '@/components/Topbar'
 import AddAPIButton from '@/components/AddAPIButton'
 import APITable from '../../../components/APITable'
 import MapTest from '../../../components/MapTest'
@@ -41,10 +42,7 @@ export default async function DashboardPage() {
 				<UserButton name={"Himanshu Sardana"} email={data.user.email} />
 			</div>
 			<div className='flex flex-col'>
-				<div className="px-10 topbar h-20 flex justify-between items-center bg-zinc-950 w-[80vw]">
-					<h3 className='text-md font-bold'>Dashboard > <span className='hover:underline text-blue-500'>APIs</span></h3>
-					<ThemeSwitcher />
-				</div>
+				<Topbar breadcrumbs="Dashboard > APIs" />
 				<div className='p-10'>
 					<div className='flex justify-between'>
 						<h3 className='text-lg font-bold'>APIs</h3>

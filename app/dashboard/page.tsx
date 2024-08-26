@@ -1,3 +1,5 @@
+import Topbar from '@/components/Topbar'
+import Sidebar from '@/components/Sidebar'
 import React from 'react'
 import AddAPIButton from '@/components/AddAPIButton'
 import APITable from '../../components/APITable'
@@ -28,23 +30,9 @@ export default async function DashboardPage() {
 
 	return (
 		<div className='p-0 m-0 flex'>
-			<div className="sidebar h-screen w-[20%] bg-zinc-950 flex flex-col justify-between">
-				<div>
-					<div className="brand p-10">
-						<h3 className='font-extrabold text-3xl'>Flow<span className='text-blue-500'>Lens</span></h3>
-					</div>
-					<div className="links flex flex-col">
-						<Link className="px-10 py-3 text-blue-500 font-bold  flex gap-3 items-center" href="localhost:3000/dashboard/"><LayoutDashboard /> Dashboard</Link>
-						<Link className="px-10 py-3 font-bold flex gap-3 items-center" href="localhost:3000/dashboard/api"><Computer /> APIs</Link>
-					</div>
-				</div>
-				<UserButton name={"Himanshu Sardana"} email={data.user.email} />
-			</div>
+			<Sidebar />
 			<div className='flex flex-col'>
-				<div className="px-10 topbar h-20 flex justify-between items-center bg-zinc-950 w-[80vw]">
-					<h3 className='text-md font-bold'>Dashboard</h3>
-					<ThemeSwitcher />
-				</div>
+				<Topbar breadcrumbs={"Dashboard"} />
 				<div className='p-10'>
 					<div className='flex justify-between'>
 						<h3 className='text-lg font-bold'>Dashboard</h3>
