@@ -1,4 +1,5 @@
 import React from 'react'
+import NextTopLoader from 'nextjs-toploader'
 import Topbar from '@/components/Topbar'
 import AddAPIButton from '@/components/AddAPIButton'
 import APITable from '../../../components/APITable'
@@ -30,12 +31,13 @@ export default async function DashboardPage() {
 
 	return (
 		<div className='p-0 m-0 flex'>
+			<NextTopLoader />
 			<Sidebar />
 			<div className='flex flex-col'>
-				<Topbar breadcrumbs="Dashboard > APIs" />
+				<Topbar breadcrumbs="Dashboard > Lenses" />
 				<div className='p-10'>
 					<div className='flex justify-between'>
-						<h3 className='text-lg font-bold'>APIs</h3>
+						<h3 className='text-lg font-bold'>Your Lenses</h3>
 						<AddAPIButton />
 					</div>
 				</div>

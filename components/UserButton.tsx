@@ -23,7 +23,7 @@ function UserButton({ name, email }) {
 			</div>
 			<Dropdown>
 				<DropdownTrigger>
-					<Button isIconOnly className='hover:bg-zinc-700 bg-zinc-100 dark:bg-zinc-950' radius='full'>
+					<Button isIconOnly className='hover:bg-zinc-400 dark:hover:bg-zinc-700 bg-zinc-100 dark:bg-zinc-950' radius='full'>
 						<ChevronRight />
 					</Button>
 				</DropdownTrigger>

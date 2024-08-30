@@ -8,6 +8,7 @@ import { Input } from '@nextui-org/input'
 import { Snippet } from "@nextui-org/snippet";
 import { Switch } from '@nextui-org/switch'
 import { Divider } from '@nextui-org/divider'
+import { createAPI } from '../app/dashboard/api/actions'
 
 function AddAPIButton() {
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
@@ -15,15 +16,15 @@ function AddAPIButton() {
 	const [apiURL, setApiURL] = useState("")
 	return (
 		<>
-			<Button color='primary' onPress={onOpen} className='font-bold' radius='sm' startContent={<Plus />}>Create API</Button>
+			<Button color='primary' onPress={onOpen} className='font-bold' radius='sm' startContent={<Plus />}>Create Lense</Button>
 
 			<Modal isOpen={isOpen} onOpenChange={onOpenChange}>
 				<ModalContent>
 					{(onClose) => (
 						<>
-							<ModalHeader className="flex flex-col gap-1">Create API</ModalHeader>
+							<ModalHeader className="flex flex-col gap-1">Create Lens</ModalHeader>
 							<ModalBody>
-								<Input onChange={(e) => setInput(e.target.value)} label="API Name" radius="sm" />
+								<Input onChange={(e) => setInput(e.target.value)} label="Lens Name" radius="sm" />
 								<Switch size='sm' className='mt-3'>Enable Notifications</Switch>
 								{apiURL && (<><h3 className='mt-5 font-bold text-sm'>API Created</h3><Snippet size="md" className=''>{apiURL}</Snippet></>)}
 							</ModalBody>
@@ -36,7 +37,9 @@ function AddAPIButton() {
 								>
 									Close
 								</Button>
-								<Button radius='sm' color="primary" onClick={() => setApiURL(`localhost:3000/${input}`)}>
+								<Button radius='sm' color="primary" onClick={() => {
+									createAPI(input)
+								}}>
 									Proceed
 								</Button>
 							</ModalFooter>

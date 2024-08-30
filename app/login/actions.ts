@@ -8,8 +8,6 @@ import { createClient } from '@/utils/supabase/server'
 export async function login(formData: FormData) {
 	const supabase = createClient()
 
-	// type-casting here for convenience
-	// in practice, you should validate your inputs
 	const data = {
 		email: formData.get('email') as string,
 		password: formData.get('password') as string,
@@ -18,9 +16,27 @@ export async function login(formData: FormData) {
 	const { error } = await supabase.auth.signInWithPassword(data)
 
 	if (error) {
-				return { success: false, message: "Incorrect email or password" }
+		return { success: false, message: "Incorrect email or password" }
 	}
 
 	revalidatePath('/', 'layout')
 	redirect('/dashboard')
+}
+
+
+export async function handleGitHubLogin() {
+	const supabase = createClient()
+	console.log("Attempting GitHub OAuth login...")
+
+	const { error } = await supabase.auth.signInWithOAuth({
+		provider: 'github',
+	})
+
+	if (error) {
+		console.log("GitHub OAuth error:", error)
+		return { success: false, message: "Failed to login with GitHub" }
+	}
+
+	console.log("GitHub OAuth login successful!")
+	return { success: true }
 }

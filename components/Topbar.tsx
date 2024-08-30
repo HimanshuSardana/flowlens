@@ -13,7 +13,7 @@ const Topbar = ({ breadcrumbs }) => {
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
 	return (
-		<div className="px-10 topbar h-20 flex justify-between items-center bg-zinc-100 dark:bg-zinc-950 w-[80vw]">
+		<div className="px-10 topbar h-20 flex justify-between items-center bg-white dark:bg-zinc-950 w-[80vw]">
 			<h3 className='text-md font-bold'>{breadcrumbs}</h3>
 			<div className='flex gap-5'>
 				<Button onPress={onOpen} className="hover:bg-default-100 rounded-full bg-transparent text-default-400" isIconOnly><Settings /></Button>
